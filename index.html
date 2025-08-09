@@ -149,6 +149,60 @@
     </div>
   </section>
 
+  <!-- FAQ (Dúvidas Frequentes) -->
+  <section id="faq" class="px-6 py-16 bg-gradient-to-b from-transparent to-black">
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-2xl font-bold mb-6 text-center">Dúvidas Frequentes</h3>
+      <div class="space-y-4">
+
+        <!-- Pergunta 1 -->
+        <div class="rounded-lg bg-gray-900 glass">
+          <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
+            Como funciona a assinatura dos planos?
+            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-content px-6 pb-4 text-gray-300 hidden">
+            Você escolhe o plano desejado e entra em contato pelo WhatsApp. O pagamento e ativação são feitos de forma simples, sem necessidade de cadastro.
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="rounded-lg bg-gray-900 glass">
+          <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
+            Preciso fazer cadastro para contratar um plano?
+            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-content px-6 pb-4 text-gray-300 hidden">
+            Não! Basta clicar no plano e falar conosco pelo WhatsApp, sem burocracia.
+          </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="rounded-lg bg-gray-900 glass">
+          <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
+            Quais formas de pagamento são aceitas?
+            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-content px-6 pb-4 text-gray-300 hidden">
+            Aceitamos Pix, transferência e cartão (consulte no WhatsApp para mais detalhes).
+          </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="rounded-lg bg-gray-900 glass">
+          <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
+            O acesso é imediato?
+            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="faq-content px-6 pb-4 text-gray-300 hidden">
+            Sim, após confirmação do pagamento, seu acesso é liberado rapidamente.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <footer class="py-6 text-center text-gray-400">
     © 2025 Uni Max
   </footer>
@@ -160,6 +214,24 @@
       const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
       window.open(url, "_blank");
     }
+
+    // FAQ Accordion JS
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const content = this.parentElement.querySelector('.faq-content');
+          if (content.classList.contains('hidden')) {
+            document.querySelectorAll('.faq-content').forEach(c => { c.classList.add('hidden'); });
+            document.querySelectorAll('.faq-toggle svg').forEach(svg => { svg.classList.remove('rotate-180'); });
+            content.classList.remove('hidden');
+            this.querySelector('svg').classList.add('rotate-180');
+          } else {
+            content.classList.add('hidden');
+            this.querySelector('svg').classList.remove('rotate-180');
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
