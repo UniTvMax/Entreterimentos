@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Uni Max- Planos de Streaming</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root{
       --bg-1: #0f0f0f;
@@ -28,8 +29,21 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
-
-  <!-- Header -->
+  <!-- Slideshow de fundo -->
+  <div class="background-slideshow" aria-hidden="true">
+    <img class="slide" src="img/the_boys.jpg" alt="The Boys" />
+    <img class="slide" src="img/stranger_things.jpg" alt="Stranger Things" />
+    <img class="slide" src="img/mad_max.jpg" alt="Mad Max: Fury Road" />
+    <img class="slide" src="img/last_of_us.jpg" alt="The Last of Us" />
+    <img class="slide" src="img/star_wars.jpg" alt="Star Wars Imperial Stormtrooper" />
+    <img class="slide" src="img/peaky_blinders.jpg" alt="Peaky Blinders" />
+    <img class="slide" src="img/walking_dead.jpg" alt="The Walking Dead" />
+    <img class="slide" src="img/daryl_dixon.jpg" alt="The Walking Dead: Daryl Dixon" />
+  </div>
+  <!-- Conteúdo principal -->
+  
+  <div class="relative z-10">
+     <!-- Header -->
   <header class="flex items-center justify-between px-6 py-5">
     <div class="flex items-center gap-4">
       <div class="text-2xl font-extrabold">Uni <span class="accent-grad">Max</span></div>
@@ -205,6 +219,37 @@
     © 2025 Uni Max
   </footer>
 
+  <script>
+    function enviarWhatsApp(plano, preco){
+      const numero = "5515998855379";
+      const mensagem = `Olá, tenho interesse no plano ${plano} (${preco})`;
+      const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+    }
+
+    // FAQ Accordion JS
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const content = this.parentElement.querySelector('.faq-content');
+          if (content.classList.contains('hidden')) {
+            document.querySelectorAll('.faq-content').forEach(c => { c.classList.add('hidden'); });
+            document.querySelectorAll('.faq-toggle svg').forEach(svg => { svg.classList.remove('rotate-180'); });
+            content.classList.remove('hidden');
+            this.querySelector('svg').classList.add('rotate-180');
+          } else {
+            content.classList.add('hidden');
+            this.querySelector('svg').classList.remove('rotate-180');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+  </div>
+
+  <script src="slideshow.js"></script>
   <script>
     function enviarWhatsApp(plano, preco){
       const numero = "5515998855379";
