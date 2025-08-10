@@ -22,7 +22,8 @@
       -moz-osx-font-smoothing:grayscale;
     }
     .glass { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); backdrop-filter: blur(6px); }
-    .accent-grad { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    /* ALTERAÇÃO: invertendo a direção do degradê da classe accent-grad */
+    .accent-grad { background: linear-gradient(270deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .card-hover { transform: translateY(0); transition: transform .10s cubic-bezier(.2,.9,.3,1), box-shadow .28s; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
   </style>
