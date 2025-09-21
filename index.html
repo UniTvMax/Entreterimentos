@@ -39,7 +39,6 @@
       background-clip: text;
       color: transparent;
     }
-    /* Card efeito Netflix */
     .card-hover {
       transform: translateY(0);
       transition: transform .20s cubic-bezier(.2,.9,.3,1), box-shadow .28s, border .2s;
@@ -51,7 +50,6 @@
       box-shadow: 0 12px 40px 0 rgba(229,9,20,0.31), 0 2px 8px 0 #000;
       border: 2px solid var(--accent-1);
     }
-    /* Botão com brilho e animação */
     .btn-net {
       background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
       color: #fff;
@@ -82,8 +80,6 @@
     .btn-net:hover::after {
       opacity: 0.8;
     }
-
-    /* FAQ animação */
     .faq-toggle svg {
       transition: transform 0.3s;
     }
@@ -98,21 +94,21 @@
       padding-bottom: 0 !important;
     }
     .faq-content.open {
-      max-height: 200px; /* ajuste conforme o conteúdo */
+      max-height: 200px;
       opacity: 1;
       padding-bottom: 1rem !important;
     }
   </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17583259748">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17583259748');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17583259748"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17583259748');
+  </script>
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -120,12 +116,8 @@
   <header class="flex items-center justify-between px-6 py-5">
     <div class="flex items-center gap-4">
       <div class="text-2xl font-extrabold">Uni <span class="accent">Max</span></div>
-      <nav class="hidden md:flex gap-6 text-sm text-gray-300">
-      </nav>
     </div>
-
-    <div class="flex items-center gap-4 text-sm">
-    </div>
+    <div class="flex items-center gap-4 text-sm"></div>
   </header>
 
   <!-- Hero -->
@@ -143,9 +135,8 @@
   <!-- Planos -->
   <section id="planos" class="px-6 py-16">
     <h2 class="text-3xl font-bold text-center mb-8 accent">Nossos Planos</h2>
-
     <div class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-3">
-      <!-- Básico -->
+      <!-- ECO -->
       <div class="p-6 rounded-2xl glass card-hover">
         <div class="flex items-center justify-between">
           <div>
@@ -157,18 +148,16 @@
             <div class="text-xs text-gray-400">/ mês</div>
           </div>
         </div>
-
         <div class="mt-4 text-sm text-gray-300">
           <div>• Qualidade: SD, HD e 4K</div>
           <div class="mt-2">• Conteúdos: +5.000</div>
         </div>
-
         <div class="mt-6">
           <button onclick="enviarWhatsApp('ECO', 'R$ 25')" class="btn-net w-full py-3 mt-3">Quero esse plano</button>
         </div>
       </div>
 
-      <!-- Médio -->
+      <!-- PAD -->
       <div class="p-6 rounded-2xl glass card-hover" style="border:2px solid var(--accent-1)">
         <div class="flex items-center justify-between">
           <div>
@@ -180,18 +169,16 @@
             <div class="text-xs text-gray-400">/ mês</div>
           </div>
         </div>
-
         <div class="mt-4 text-sm text-gray-300">
           <div>• Qualidade: SD, HD e 4K</div>
           <div class="mt-2">• Conteúdos: +10.000</div>
         </div>
-
         <div class="mt-6">
           <button onclick="enviarWhatsApp('PAD', 'R$ 30')" class="btn-net w-full py-3 mt-3">Quero esse plano</button>
         </div>
       </div>
 
-      <!-- Ultra -->
+      <!-- AV -->
       <div class="p-6 rounded-2xl glass card-hover">
         <div class="flex items-center justify-between">
           <div>
@@ -203,18 +190,15 @@
             <div class="text-xs text-gray-400">/ mês</div>
           </div>
         </div>
-
         <div class="mt-4 text-sm text-gray-300">
           <div>• Qualidade: SD, HD e 4K</div>
           <div class="mt-2">• Conteúdos: +20.000</div>
         </div>
-
         <div class="mt-6">
           <button onclick="enviarWhatsApp('AV', 'R$ 35')" class="btn-net w-full py-3 mt-3">Quero esse plano</button>
         </div>
       </div>
     </div>
-
     <p class="text-center text-sm text-gray-400 mt-6">Sem cadastro — ao clicar em um plano você será redirecionado para o WhatsApp com uma mensagem pronta.</p>
   </section>
 
@@ -230,65 +214,46 @@
     </div>
   </section>
 
-  <!-- FAQ (Dúvidas Frequentes) -->
+  <!-- FAQ -->
   <section id="faq" class="px-6 py-16 bg-gradient-to-b from-transparent to-black">
     <div class="max-w-3xl mx-auto">
       <h3 class="text-2xl font-bold mb-6 text-center accent">Dúvidas Frequentes</h3>
       <div class="space-y-4">
-
-        <!-- Pergunta 1 -->
+        <!-- Perguntas -->
         <div class="rounded-lg glass">
           <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
             Quais dispositivos são compatíveis com o serviço?
-            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content px-6 text-gray-300">
-           Smarts Tvs, Android Box, Celular, Tablets e Computador
-          </div>
+          <div class="faq-content px-6 text-gray-300">Smarts TVs, Android Box, Celular, Tablets e Computador</div>
         </div>
-
-        <!-- Pergunta 2 -->
         <div class="rounded-lg glass">
           <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
             Como faço para criar minha conta?
-            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content px-6 text-gray-300">
-            Fale com a nossa equipe e eles ativarão sua conta logo após o pagamento!
-          </div>
+          <div class="faq-content px-6 text-gray-300">Fale com a nossa equipe e eles ativarão sua conta logo após o pagamento!</div>
         </div>
-
-        <!-- Pergunta 3 -->
         <div class="rounded-lg glass">
           <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
             Quais formas de pagamento são aceitas?
-            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content px-6 text-gray-300">
-            Aceitamos apenas Pix,(consulte no WhatsApp para mais detalhes).
-          </div>
+          <div class="faq-content px-6 text-gray-300">Aceitamos apenas Pix. Consulte no WhatsApp para mais detalhes.</div>
         </div>
-
-        <!-- Pergunta 4 -->
         <div class="rounded-lg glass">
           <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
-           Posso cancelar a assinatura a qualquer momento?
-            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            Posso cancelar a assinatura a qualquer momento?
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content px-6 text-gray-300">
-            Pode sim, porém após a ativação da conta, não será possivel reembolsar seu dinheiro
-          </div>
+          <div class="faq-content px-6 text-gray-300">Pode sim, porém após a ativação da conta, não será possível reembolsar seu dinheiro.</div>
         </div>
-        
-        <!-- Pergunta 5 -->
         <div class="rounded-lg glass">
           <button type="button" class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center faq-toggle">
-           O catálogo é atualizado com que frequência? 
-            <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+            O catálogo é atualizado com que frequência?
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="faq-content px-6 text-gray-300">
-          Filmes atualizados todos os dias!
-          </div>
+          <div class="faq-content px-6 text-gray-300">Filmes atualizados todos os dias!</div>
         </div>
       </div>
     </div>
@@ -306,15 +271,13 @@
       window.open(url, "_blank");
     }
 
-    // FAQ Accordion JS com animação suave
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.faq-toggle').forEach(btn => {
         btn.addEventListener('click', function() {
           const content = this.parentElement.querySelector('.faq-content');
           const isOpen = content.classList.contains('open');
-          // Fecha todos
-          document.querySelectorAll('.faq-content').forEach(c => { c.classList.remove('open'); });
-          document.querySelectorAll('.faq-toggle').forEach(b => { b.classList.remove('active'); });
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+          document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('active'));
           if (!isOpen) {
             content.classList.add('open');
             this.classList.add('active');
